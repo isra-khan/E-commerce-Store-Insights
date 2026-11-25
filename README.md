@@ -9,7 +9,7 @@ Interactive Streamlit dashboard for the Pakistan Largest Ecommerce dataset. It c
 3. Keep `Pakistan Largest Ecommerce Dataset.csv.gz` beside `app.py`.
 4. Start: `streamlit run app.py`
 
-The original source notebook and CSV are left unchanged locally; the repository uses a compressed CSV copy to stay below GitHub's per-file size limit. Blank source rows and fully empty `Unnamed` columns are removed at load time. Missing categorical values display as `Unknown`. Revenue sums line level `grand_total`; AOV uses the maximum line total per order, in keeping with the notebook's method.
+The original source notebook and CSV are left unchanged locally; the repository uses a compressed CSV copy to stay below GitHub's per-file size limit. Blank source rows and fully empty `Unnamed` columns are removed at load time. Missing categorical values display as `Unknown`, while the data-quality view measures missingness before that replacement. Merchandise value is calculated from line-level `price × qty_ordered` (before discounts). `grand_total` is counted once per order for deduplicated order value and AOV. The dashboard defaults to `complete` orders; other statuses can be selected in the sidebar.
 
 ## Deploy
 
